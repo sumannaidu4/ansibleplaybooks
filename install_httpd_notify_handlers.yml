@@ -1,0 +1,19 @@
+---
+- name: this play book is for installing httpd usinh notify and handlers
+  hosts: all
+  become : yes
+
+
+  tasks: 
+   - name: installing httpd
+     yum:
+      name: httpd
+      state: installed
+     notify: starting httpd service
+
+  handlers:
+   - name: starting httpd service 
+     service:
+      name: httpd 
+      state: started
+

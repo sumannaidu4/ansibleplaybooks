@@ -1,0 +1,12 @@
+---
+- name: this play book is for installing tree
+  hosts: all
+  become: yes
+
+  tasks:
+   - name: isntalling tree
+     yum: 
+      name: tree
+      state: installed
+  
+

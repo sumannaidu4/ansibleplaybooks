@@ -1,0 +1,17 @@
+---
+- name: this play book is for stopping service and un installing httpd
+  hosts: all
+  become : yes
+
+  tasks:
+   - name: stopping service
+     service: 
+      name: httpd
+      state: stopped
+
+   - name: uninstalling httpd
+     yum:
+      name: httpd
+      state: absent
+
+

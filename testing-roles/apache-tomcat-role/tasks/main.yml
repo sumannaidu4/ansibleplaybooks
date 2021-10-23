@@ -1,0 +1,24 @@
+---
+# tasks file for apache-tomcat-role
+ - name: installing httpd
+   yum:
+     name: httpd
+     state: installed
+   when: ansible_os_family == "RedHat"
+   notify: starting service for httpd
+
+
+ - name: installing apache2
+   apt:
+      name: apache2
+      state: present
+   when: ansible_os_family == "debian"
+   notify:  starting service apache2
+
+ - name: copy inex.html file
+   copy:
+     src: /home/ansadmin/index.html
+     dest: /var/www/html
+     mode: 0777
+
+

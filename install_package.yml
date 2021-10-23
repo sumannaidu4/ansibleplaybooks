@@ -1,0 +1,11 @@
+---
+- name: this play book is for insatalling git
+  hosts: all
+  become: yes
+
+  tasks:
+   - name: installing git
+     yum:
+       name: git
+       state: installed
+

@@ -1,0 +1,14 @@
+---
+- name: creating user vars
+  hosts: all
+  become: yes
+
+  vars:
+   user : sunny
+
+
+  tasks:
+   - name: creating user {{user}}
+     user:
+       name: "{{user}}"
+

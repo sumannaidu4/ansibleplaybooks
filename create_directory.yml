@@ -1,0 +1,13 @@
+---
+- name: this play book is fo creating directory
+  hosts: all
+  become: yes
+
+  tasks:
+   - name: creating user directory
+     file: 
+       path: /home/ansadmin/devops_dir
+       state: directory
+
+          
+

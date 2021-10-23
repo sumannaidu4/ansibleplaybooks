@@ -1,0 +1,10 @@
+---
+- name: install multiple pacakages
+  hosts: all
+  become: yes
+
+  tasks:
+   - name: installing multiple packeges       
+     yum:
+      name: [ 'git','tree', 'mysql']
+      state: installed

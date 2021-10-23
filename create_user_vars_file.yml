@@ -1,0 +1,15 @@
+---
+- name: creating user with vars file
+  hosts: all
+  become: yes
+
+  vars_files:
+   - user.yml 
+
+
+  tasks:
+   - name: creating user {{user}}
+     user:
+       name: "{{user}}"
+       state: present
+          

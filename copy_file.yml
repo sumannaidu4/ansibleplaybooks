@@ -1,0 +1,14 @@
+---
+- name: this play book is to copy a file
+  hosts: all
+  become: yes
+
+  tasks:
+   - name: copyng index.html file
+     copy: 
+      src: /home/ansadmin/index.html
+      dest: /home/ansadmin
+      owner: ansadmin
+      group: ansadmin
+      mode: 0644
+

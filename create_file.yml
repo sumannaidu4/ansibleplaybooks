@@ -1,0 +1,12 @@
+---
+- name: this play book is fo creating file
+  hosts: all
+  become: yes
+
+  tasks:
+   - name: creating user file
+     file: 
+       path: /tmp/sumanfile
+       state: touch
+          
+
